@@ -1,0 +1,13 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Close-up line illustration of tuning pegs and scroll">
+  <rect width="500" height="500" fill="#14130F"/>
+  <path d="M220 60 C170 60 150 100 165 140 C178 172 220 165 220 132" fill="none" stroke="#C6A15B" stroke-width="3"/>
+  <rect x="196" y="132" width="70" height="150" rx="10" fill="none" stroke="#C6A15B" stroke-width="3"/>
+  <circle cx="216" cy="165" r="7" fill="none" stroke="#AEB4B8" stroke-width="2"/>
+  <circle cx="246" cy="165" r="7" fill="none" stroke="#AEB4B8" stroke-width="2"/>
+  <circle cx="216" cy="220" r="7" fill="none" stroke="#AEB4B8" stroke-width="2"/>
+  <circle cx="246" cy="220" r="7" fill="none" stroke="#AEB4B8" stroke-width="2"/>
+  <line x1="216" y1="165" x2="130" y2="150" stroke="#EDEAE2" stroke-width="1"/>
+  <line x1="246" y1="165" x2="330" y2="150" stroke="#EDEAE2" stroke-width="1"/>
+  <line x1="216" y1="220" x2="130" y2="230" stroke="#EDEAE2" stroke-width="1"/>
+  <line x1="246" y1="220" x2="330" y2="230" stroke="#EDEAE2" stroke-width="1"/>
+</svg>

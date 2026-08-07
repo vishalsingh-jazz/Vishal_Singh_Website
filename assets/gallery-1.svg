@@ -1,0 +1,11 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Close-up line illustration of a double bass f-hole">
+  <rect width="500" height="500" fill="#F6F4EF"/>
+  <circle cx="250" cy="250" r="230" fill="none" stroke="#DCDFE1" stroke-width="1"/>
+  <path d="M210 90 C170 160 170 260 200 320 C170 330 150 370 165 420" fill="none" stroke="#C6A15B" stroke-width="3"/>
+  <path d="M290 90 C330 160 330 260 300 320 C330 330 350 370 335 420" fill="none" stroke="#C6A15B" stroke-width="3"/>
+  <circle cx="203" cy="150" r="4" fill="#14130F"/>
+  <circle cx="297" cy="150" r="4" fill="#14130F"/>
+  <g stroke="#AEB4B8" stroke-width="1">
+    <line x1="120" y1="250" x2="380" y2="250"/>
+  </g>
+</svg>

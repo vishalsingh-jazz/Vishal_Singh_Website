@@ -1,0 +1,55 @@
+<svg viewBox="0 0 420 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="bassTitle" id="heroBassSvg">
+  <title id="bassTitle">Line illustration of an upright double bass</title>
+  <defs>
+    <linearGradient id="bodyGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E7D2A0"/>
+      <stop offset="55%" stop-color="#C6A15B"/>
+      <stop offset="100%" stop-color="#8C6B34"/>
+    </linearGradient>
+  </defs>
+
+  <!-- scroll & pegbox -->
+  <path d="M195 40 C170 40 160 62 168 82 C176 100 200 96 200 78" fill="none" stroke="url(#bodyGold)" stroke-width="2.5"/>
+  <rect x="182" y="78" width="36" height="58" rx="6" fill="none" stroke="url(#bodyGold)" stroke-width="2.5"/>
+  <circle cx="190" cy="92" r="3" fill="none" stroke="#AEB4B8" stroke-width="1.4"/>
+  <circle cx="210" cy="92" r="3" fill="none" stroke="#AEB4B8" stroke-width="1.4"/>
+  <circle cx="190" cy="118" r="3" fill="none" stroke="#AEB4B8" stroke-width="1.4"/>
+  <circle cx="210" cy="118" r="3" fill="none" stroke="#AEB4B8" stroke-width="1.4"/>
+
+  <!-- neck -->
+  <rect x="193" y="136" width="14" height="190" fill="none" stroke="url(#bodyGold)" stroke-width="2"/>
+  <!-- fret markers (fingerboard position dots) -->
+  <circle cx="200" cy="200" r="2" fill="#C6A15B"/>
+  <circle cx="200" cy="250" r="2" fill="#C6A15B"/>
+  <circle cx="200" cy="300" r="2" fill="#C6A15B"/>
+
+  <!-- upper bout -->
+  <path d="M200 326
+           C120 330 90 380 96 440
+           C100 480 130 500 140 520
+           C110 535 96 570 104 610
+           C112 660 160 690 200 690
+           C240 690 288 660 296 610
+           C304 570 290 535 260 520
+           C270 500 300 480 304 440
+           C310 380 280 330 200 326 Z"
+        fill="none" stroke="url(#bodyGold)" stroke-width="2.5"/>
+
+  <!-- f-holes -->
+  <path d="M158 440 C150 460 150 480 160 498 C152 500 146 508 150 518" fill="none" stroke="#AEB4B8" stroke-width="1.6"/>
+  <path d="M242 440 C250 460 250 480 240 498 C248 500 254 508 250 518" fill="none" stroke="#AEB4B8" stroke-width="1.6"/>
+
+  <!-- bridge -->
+  <path d="M172 560 L172 600 M228 560 L228 600 M172 580 L228 580" stroke="#AEB4B8" stroke-width="1.6" fill="none"/>
+
+  <!-- tailpiece -->
+  <path d="M200 690 L200 706" stroke="url(#bodyGold)" stroke-width="2.5"/>
+
+  <!-- strings (animatable) -->
+  <g id="bassStrings" stroke="#EDEAE2" stroke-width="1.2" opacity="0.9">
+    <line class="bass-string" x1="191" y1="82" x2="184" y2="690"/>
+    <line class="bass-string" x1="197" y1="82" x2="194" y2="690"/>
+    <line class="bass-string" x1="203" y1="82" x2="206" y2="690"/>
+    <line class="bass-string" x1="209" y1="82" x2="216" y2="690"/>
+  </g>
+</svg>

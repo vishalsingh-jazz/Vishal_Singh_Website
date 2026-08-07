@@ -1,0 +1,32 @@
+<svg viewBox="0 0 480 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="portraitTitle">
+  <title id="portraitTitle">Abstract line portrait of the artist with a double bass</title>
+  <rect width="480" height="600" fill="#14130F"/>
+  <defs>
+    <linearGradient id="pGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E7D2A0"/>
+      <stop offset="100%" stop-color="#9C7B3C"/>
+    </linearGradient>
+  </defs>
+  <!-- ambient rings -->
+  <circle cx="240" cy="300" r="220" fill="none" stroke="#2A2820" stroke-width="1"/>
+  <circle cx="240" cy="300" r="170" fill="none" stroke="#2A2820" stroke-width="1"/>
+
+  <!-- shoulders / torso silhouette -->
+  <path d="M110 600 C110 470 170 410 240 410 C310 410 370 470 370 600" fill="none" stroke="url(#pGold)" stroke-width="2"/>
+  <!-- head -->
+  <path d="M195 330 C195 280 215 250 240 250 C265 250 285 280 285 330 C285 365 265 385 240 385 C215 385 195 365 195 330 Z" fill="none" stroke="url(#pGold)" stroke-width="2"/>
+  <!-- jaw / neck line -->
+  <path d="M222 370 L222 410 M258 370 L258 410" stroke="#AEB4B8" stroke-width="1.2"/>
+
+  <!-- bass scroll emerging behind shoulder -->
+  <path d="M120 420 C110 380 118 340 145 320" fill="none" stroke="#AEB4B8" stroke-width="1.6"/>
+  <path d="M120 420 L120 560" stroke="#AEB4B8" stroke-width="1.6"/>
+
+  <!-- fine hatch shading accents -->
+  <g stroke="#3A362A" stroke-width="1">
+    <line x1="200" y1="420" x2="200" y2="600"/>
+    <line x1="216" y1="420" x2="216" y2="600"/>
+    <line x1="264" y1="420" x2="264" y2="600"/>
+    <line x1="280" y1="420" x2="280" y2="600"/>
+  </g>
+</svg>
