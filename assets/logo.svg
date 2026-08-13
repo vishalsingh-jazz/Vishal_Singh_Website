@@ -1,5 +1,5 @@
 <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle">
-  <title id="logoTitle">Lowell Reeves monogram</title>
+  <title id="logoTitle">V.S.R monogram</title>
   <defs>
     <linearGradient id="goldStroke" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#E7D2A0"/>
@@ -9,7 +9,7 @@
   </defs>
   <circle cx="80" cy="80" r="76" fill="none" stroke="url(#goldStroke)" stroke-width="2"/>
   <circle cx="80" cy="80" r="68" fill="none" stroke="#AEB4B8" stroke-width="1" opacity="0.6"/>
-  <text x="80" y="98" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="52" fill="#14130F">LR</text>
+  <text x="80" y="94" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="34" fill="#14130F">V.S.R</text>
   <circle cx="80" cy="34" r="2.5" fill="#C6A15B"/>
   <circle cx="80" cy="126" r="2.5" fill="#C6A15B"/>
 </svg>
