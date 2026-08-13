@@ -200,7 +200,7 @@ h2.section-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: 0.9rem;
+  padding-block: 0.1rem;
 }
 
 .brand {
@@ -211,7 +211,7 @@ h2.section-title {
   font-size: 1.05rem;
   letter-spacing: 0.02em;
 }
-.brand img { width: 34px; height: 34px; }
+.brand img { width: 34px; height: 84px; }
 .brand .brand-sub {
   display: block;
   font-family: var(--font-mono);
