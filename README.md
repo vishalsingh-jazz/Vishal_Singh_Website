@@ -1,4 +1,4 @@
-# Lowell Reeves — Jazz Bassist Portfolio
+# Vishal Singh Rebari — Jazz Bassist Portfolio
 
 A premium, single-page portfolio site for a jazz double bassist. White / silver /
 metallic-gold theme, pure HTML + CSS + JavaScript — no build step, no frameworks,
@@ -22,14 +22,14 @@ over HTTP — see below — but everything in this project works fine from `file
 
 ```bash
 # Python 3 (built in on macOS/Linux, installable on Windows)
-cd lowell-reeves
+cd vishal_singh_website
 python3 -m http.server 8000
 # then open http://localhost:8000
 ```
 
 ```bash
 # Node, if you have it
-cd lowell-reeves
+cd vishal_singh_website
 npx serve .
 ```
 
@@ -63,7 +63,7 @@ No build step, no `dist/` folder — GitHub Pages serves these files as-is.
 ## 3. Project structure
 
 ```
-lowell-reeves/
+vishal_singh_website/
 ├── index.html          All page content and structure
 ├── style.css            Design tokens + all styling (single file, ~ well-organized sections)
 ├── script.js             Nav, scroll effects, track player UI, lightbox, form validation
