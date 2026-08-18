@@ -1,5 +1,5 @@
 /* =========================================================
-   LOWELL REEVES — portfolio stylesheet
+   Vishal Singh — portfolio stylesheet
    Design tokens live at the top. Edit these first.
    ========================================================= */
 
@@ -616,6 +616,29 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 }
 .gallery-grid a { display: block; overflow: hidden; }
 .gallery-grid a:hover img { transform: scale(1.05); }
+
+.gallery-wrap { position: relative; }
+
+.gallery-grid.is-collapsed {
+  max-height: 620px;
+  overflow: hidden;
+}
+
+.gallery-fade {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 64px; /* sits just above the toggle button */
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--ivory));
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease);
+}
+.gallery-fade.is-hidden { opacity: 0; }
+
+.gallery-toggle {
+  display: block;
+  margin: 2rem auto 0;
+}
 
 /* =========================================================
    Press / testimonials

@@ -1,5 +1,5 @@
 /* =========================================================
-   LOWELL REEVES — site behaviour
+   Vishal Singh — site behaviour
    No dependencies. Organized by feature, top to bottom.
    ========================================================= */
 (function () {
@@ -231,7 +231,7 @@ if (galleryGrid && galleryToggle) {
 
       // Demo behaviour: show a confirmation and reset the form.
       // Swap this block for a real submission (fetch/Formspree/Netlify Forms/etc).
-      formNote.textContent = "Thanks, " + name.value.trim().split(" ")[0] + " — message received. Lowell's team will reply within a few days.";
+      formNote.textContent = "Thanks, " + name.value.trim().split(" ")[0] + " — message received. Vishal's team will reply within a few days.";
       formNote.classList.add("success");
       form.reset();
     });

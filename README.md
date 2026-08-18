@@ -4,8 +4,6 @@ A premium, single-page portfolio site for a jazz double bassist. White / silver 
 metallic-gold theme, pure HTML + CSS + JavaScript — no build step, no frameworks,
 no dependencies to install.
 
-**Live demo content is fictional** — "Lowell Reeves," his albums, tour dates, and
-quotes are placeholders for you to replace with a real artist's information.
 
 ---
 
@@ -44,7 +42,7 @@ npx serve .
 
 1. Create a new GitHub repository and push this folder's contents to the `main` branch:
    ```bash
-   cd lowell-reeves
+   cd vishal_singh_website
    git init
    git add .
    git commit -m "Initial site"
@@ -144,7 +142,7 @@ In priority order:
 Everything is in plain HTML — no templating engine, no CMS. Open `index.html`
 and edit directly:
 
-- **Name / branding:** search for `Lowell Reeves` (appears in `<title>`, the
+- **Name / branding:** search for `Vishal Singh` (appears in `<title>`, the
   nav brand, hero, and footer).
 - **Bio:** the `#about` section.
 - **Discography:** each `.track` block inside `#trackList`.
