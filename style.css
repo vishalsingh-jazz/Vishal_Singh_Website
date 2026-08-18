@@ -211,7 +211,7 @@ h2.section-title {
   font-size: 1.05rem;
   letter-spacing: 0.02em;
 }
-.brand img { width: 34px; height: 84px; }
+.brand img { width: 75px; height: 84px; }
 .brand .brand-sub {
   display: block;
   font-family: var(--font-mono);
@@ -276,27 +276,32 @@ h2.section-title {
 /* =========================================================
    Hero
    ========================================================= */
-.hero {
-  position: relative;
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  background: radial-gradient(ellipse 80% 60% at 70% 20%, rgba(198,161,91,0.16), transparent 60%), var(--charcoal);
-  color: var(--ivory);
-  overflow: hidden;
-  padding-top: 5.5rem;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
-}
-
-.hero-copy .eyebrow { color: var(--gold-light); }
-.hero-copy .eyebrow::before { background: var(--gold-light); }
+   .hero {
+    position: relative;
+    min-height: 150svh;
+    display: flex;
+    align-items: center;
+    background:
+      linear-gradient(180deg, rgba(20,19,15,0.45), rgba(20,19,15,0.78)),
+      url("assets/Vishal_portrait.jpg") center 50% / cover no-repeat;
+    color: var(--ivory);
+    overflow: hidden;
+    padding-top: 45.5rem;
+    padding-right: 32.5rem; 
+  }
+  
+  .hero-grid {
+    display: block;         /* was a two-column grid for the side illustration; not needed now */
+    width: 100%;
+    max-width: 720px;       /* keeps the text block readable instead of stretching full-width */
+  }
+  
+  .hero-copy .eyebrow { color: var(--gold-light); }
+  .hero-copy .eyebrow::before { background: var(--gold-light); }
+  
+  .hero-sub { color: var(--silver-light); }
+  
+  .hero-scroll-cue { color: var(--silver-light); }
 
 .hero-title {
   font-size: clamp(2.6rem, 6vw, 5rem);
@@ -410,7 +415,7 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .about-portrait {
   position: relative;
   border: 1px solid var(--line);
-  padding: 14px;
+  margin-bottom: 320px;
 }
 .about-portrait img { width: 100%; }
 .about-portrait::after {
@@ -459,17 +464,33 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .discography .eyebrow::before { background: var(--gold-light); }
 .discography .section-lede { color: var(--silver-light); }
 
-.track-list { border-top: 1px solid var(--line-on-dark); }
+.track-row { border-bottom: 1px solid var(--line-on-metal); }
+.track-list { border-top: none; }
+.track-row:first-child { border-top: 1px solid var(--line-on-metal); }
+
 .track {
+  width: 100%;
   display: grid;
   grid-template-columns: 3.5rem 1fr auto auto;
   align-items: center;
   gap: 1.5rem;
   padding-block: 1.25rem;
-  border-bottom: 1px solid var(--line-on-dark);
+  background: none;
+  border: none;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
   transition: background 0.3s var(--ease);
 }
-.track:hover { background: rgba(198, 161, 91, 0.06); }
+.track:hover { background: rgba(198, 161, 91, 0.10); }
+
+.track-embed[data-platform="soundcloud"] iframe { height: 420px; }
+.track-embed { padding-bottom: 1.25rem; }
+.track-embed iframe { width: 100%; border: 0; border-radius: 4px; display: block; }
+
+.track-embed[data-platform="spotify"] iframe { height: 152px; }
+
 
 .track-index {
   font-family: var(--font-mono);
@@ -788,6 +809,18 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .lightbox-close:hover { border-color: var(--gold); color: var(--gold-light); }
 .lightbox-caption { margin-top: 1.2rem; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em; color: var(--silver); }
 
+.lightbox-video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.lightbox-video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 /* =========================================================
    Responsive
    ========================================================= */

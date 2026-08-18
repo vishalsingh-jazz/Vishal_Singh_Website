@@ -85,36 +85,31 @@
      line. Point `audio.src` at a real file to make it functional —
      see the README for the two-line change required.
   ------------------------------------------------------------ */
-  var previewAudio = document.getElementById("previewAudio");
-  var playerNote = document.getElementById("playerNote");
-  var currentTrack = null;
-
-  document.querySelectorAll(".track-play").forEach(function (btn) {
+  document.querySelectorAll(".track[data-embed]").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      var track = btn.closest(".track");
-      var titleEl = track.querySelector(".track-title");
-      var title = titleEl ? titleEl.childNodes[0].textContent.trim() : "Track";
-
-      // Stop whichever track was previously "playing"
-      if (currentTrack && currentTrack !== track) {
-        currentTrack.classList.remove("is-playing");
-      }
-
-      var nowPlaying = track.classList.toggle("is-playing");
-      currentTrack = nowPlaying ? track : null;
-
-      if (nowPlaying) {
-        if (playerNote) {
-          playerNote.textContent = "Now previewing \u201C" + title + "\u201D — add an audio file (see README) to enable real playback.";
+      var row = btn.closest(".track-row");
+      var embed = row.querySelector(".track-embed");
+      var isOpen = !embed.hidden;
+  
+      // Close and clear any other open player so only one plays at a time
+      document.querySelectorAll(".track-embed").forEach(function (e) {
+        if (e !== embed) {
+          e.hidden = true;
+          e.innerHTML = "";
         }
-        // If a real src has been set on #previewAudio elsewhere, this will actually play it.
-        if (previewAudio && previewAudio.src) {
-          previewAudio.currentTime = 0;
-          previewAudio.play().catch(function () { /* autoplay restrictions: ignore */ });
-        }
+      });
+  
+      if (isOpen) {
+        embed.hidden = true;
+        embed.innerHTML = "";
       } else {
-        if (playerNote) playerNote.textContent = "Select a track to preview.";
-        if (previewAudio) previewAudio.pause();
+        embed.hidden = false;
+        embed.dataset.platform = btn.dataset.embed;
+        var iframe = document.createElement("iframe");
+        iframe.src = btn.dataset.src;
+        iframe.loading = "lazy";
+        iframe.setAttribute("allow", "autoplay; encrypted-media");
+        embed.appendChild(iframe);
       }
     });
   });
@@ -124,6 +119,9 @@
   var lightboxImg = document.getElementById("lightboxImg");
   var lightboxCaption = document.getElementById("lightboxCaption");
   var lightboxClose = document.getElementById("lightboxClose");
+
+  var lightboxVideoWrap = document.getElementById("lightboxVideoWrap");
+var lightboxVideo = document.getElementById("lightboxVideo");
 
   function openLightbox(src, alt, caption) {
     if (!lightbox) return;
@@ -140,14 +138,30 @@
     lightbox.classList.remove("is-open");
     lightbox.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+    lightboxVideo.src = "";
+    lightboxVideoWrap.style.display = "none";
+    lightboxImg.style.display = "block";
   }
 
   document.querySelectorAll(".video-card").forEach(function (card) {
     card.addEventListener("click", function () {
-      var img = card.querySelector("img");
-      openLightbox(img.src, img.alt, card.dataset.caption || card.dataset.video || "");
+      var youtubeId = card.dataset.youtubeId;
+      var caption = card.dataset.caption || "";
+      if (youtubeId) openVideoLightbox(youtubeId, caption);
     });
   });
+  
+  function openVideoLightbox(youtubeId, caption) {
+    if (!lightbox) return;
+    lightboxImg.style.display = "none";
+    lightboxVideoWrap.style.display = "block";
+    lightboxVideo.src = "https://www.youtube.com/embed/" + youtubeId + "?autoplay=1&rel=0";
+    lightboxCaption.textContent = caption;
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+    lightboxClose.focus();
+    document.body.style.overflow = "hidden";
+  }
 
   document.querySelectorAll("[data-lightbox]").forEach(function (link) {
     link.addEventListener("click", function (e) {
@@ -166,6 +180,25 @@
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeLightbox();
   });
+
+  var galleryGrid = document.getElementById("galleryGrid");
+var galleryToggle = document.getElementById("galleryToggle");
+var galleryFade = document.getElementById("galleryFade");
+
+if (galleryGrid && galleryToggle) {
+  galleryToggle.addEventListener("click", function () {
+    var isCollapsed = galleryGrid.classList.toggle("is-collapsed");
+    galleryFade.classList.toggle("is-hidden", !isCollapsed);
+    galleryToggle.textContent = isCollapsed ? "View Full Gallery" : "Close Gallery";
+    galleryToggle.setAttribute("aria-expanded", String(!isCollapsed));
+
+    // When closing, scroll back up to the top of the section so the
+    // person isn't left stranded far down a now-short gallery.
+    if (!isCollapsed === false) {
+      document.getElementById("gallery").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+}
 
   /* ---------- Contact form (client-side demo) ----------
      No backend is wired up. This validates the fields and shows

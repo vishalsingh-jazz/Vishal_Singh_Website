@@ -56,33 +56,28 @@
   <!-- =========================================================
        HERO
        ========================================================= -->
-  <section class="hero" id="top">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow">Composer and Bassist</span>
-        <h1 class="hero-title">
-          <span class="line gold-text accent" style="font-size: 55px;">Vishal Singh Rebari</span>
-        </h1>
-        <p class="hero-sub">
-          Playing, Composing, and Creating -Always looking for something new.
-        </p>
-        <div class="hero-actions">
-          <a href="#music" class="btn btn-primary">Listen to the Music</a>
-          <a href="#contact" class="btn btn-ghost">Book a Session</a>
+       <section class="hero" id="top">
+        <div class="container hero-grid" style="background-color: #402f0749;">
+          <div class="hero-copy">
+            <span class="eyebrow">Composer and Bassist</span>
+            <h1 class="hero-title">
+              <span class="line gold-text accent" style="font-size: 55px;">Vishal Singh Rebari</span>
+            </h1>
+            <p class="hero-sub">
+              Playing, Composing, and Creating -Always looking for something new.
+            </p>
+            <div class="hero-actions">
+              <a href="#music" class="btn btn-primary">Listen to the Music</a>
+              <a href="#contact" class="btn btn-ghost">Book a Session</a>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="hero-art" aria-hidden="true">
-        <!-- signature illustration, strings animate via CSS -->
-        <img src="assets/hero-bass.svg" alt="" width="420" height="720">
-      </div>
-    </div>
-
-    <a href="#about" class="hero-scroll-cue">
-      <span>Scroll</span>
-      <span class="stem"></span>
-    </a>
-  </section>
+    
+        <a href="#about" class="hero-scroll-cue">
+          <span>Scroll</span>
+          <span class="stem"></span>
+        </a>
+    </section>
 
   <!-- =========================================================
        ABOUT
@@ -90,7 +85,7 @@
   <section id="about">
     <div class="container about-grid">
       <figure class="about-portrait reveal">
-        <img src="assets/portrait.svg" alt="Illustrated portrait of Vishal Singh with his double bass" width="480" height="600">
+        <img src="assets/Vishal_portrait_1.jpg" alt="Illustrated portrait of Vishal Singh with his double bass" width="480" height="650">
       </figure>
 
       <div class="about-copy reveal">
@@ -108,8 +103,8 @@ As the leader of the V.S.R. Quintet, Vishal presents original compositions shape
           </p><p>Vishal is currently working on his debut album, featuring original compositions developed through his work with the V.S.R. Quintet. Alongside his work as a performing musician, he is also expanding his work as a composer for film, developing music for independent films and visual projects. He is also available for private lessons and music education, working with students of different levels and helping them develop their musicianship, technique, and understanding of music.
         </p>
         <div class="about-facts">
-          <div><span class="fact-num">1</span><span class="fact-label">Released a Single "AAYO RE JOGI"</span></div>
-          <div><<span class="fact-label">Winner - Erasmus Jazz prize 2026</span></div>
+          <div><span class="fact-label">Released a Single "AAYO RE JOGI"</span></div>
+          <div><span class="fact-label">Winner - Erasmus Jazz prize 2026</span></div>
           
         </div>
       </div>
@@ -119,98 +114,128 @@ As the leader of the V.S.R. Quintet, Vishal presents original compositions shape
   <!-- =========================================================
        MUSIC / DISCOGRAPHY — liner-note track list
        ========================================================= -->
-  <section id="music" class="discography">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Discography</span>
-        <h2 class="section-title">Selected Recordings</h2>
-        <p class="section-lede">Four studio records and a handful of sides worth your time. Press play on any track for a 20-second preview.</p>
-      </div>
-
-      <div class="track-list reveal" id="trackList">
-        <div class="track" data-track="1">
-          <span class="track-index"><span class="dot"></span>01</span>
-          <span class="track-title">Low Light<span>Low Light · 2024 · Title Track</span></span>
-          <span class="track-length">5:42</span>
-          <button class="track-play" aria-label="Play preview of Low Light">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </button>
+       <section id="music" class="discography">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Discography</span>
+            <h2 class="section-title">Recordings</h2>
+            <p class="section-lede">A jazz session and a pop-folk single — press play to listen right here.</p>
+          </div>
+    
+          <div class="track-list reveal" id="trackList">
+    
+            <div class="track-row">
+              <button
+                class="track"
+                type="button"
+                data-embed="soundcloud"
+                data-src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fvishal-singh-rebari&color=%23c6a15b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_artwork=true&show_playcount=true&visual=false"
+                  >
+                <span class="track-index"><span class="dot"></span>01</span>
+                <span class="track-title">Jazz Recordings<span>SoundCloud &middot; Full Catalog &mdash; browse &amp; play any track</span></span>
+                <span class="track-length">Play</span>
+                <span class="track-play" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+              </button>
+              
+              <div class="track-embed" hidden></div>
+            </div>
+    
+            <div class="track-row">
+              <button
+                class="track"
+                type="button"
+                data-embed="spotify"
+                data-src="https://open.spotify.com/embed/track/7JD61moPeS9plxzKbUPcGd?utm_source=generator&theme=0"
+              >
+                <span class="track-index"><span class="dot"></span>02</span>
+                <span class="track-title">Pop Folk &mdash; "Aayo Re Jogi" - Single<span>Spotify</span></span>
+                <span class="track-length">Play</span>
+                <span class="track-play" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+              </button>
+              <div class="track-embed" hidden></div>
+            </div>
+    
+          </div>
         </div>
-        <div class="track" data-track="2">
-          <span class="track-index"><span class="dot"></span>02</span>
-          <span class="track-title">Midnight Walk<span>Low Light · 2024</span></span>
-          <span class="track-length">6:15</span>
-          <button class="track-play" aria-label="Play preview of Midnight Walk">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </button>
-        </div>
-        <div class="track" data-track="3">
-          <span class="track-index"><span class="dot"></span>03</span>
-          <span class="track-title">Copper &amp; Rust<span>Standing Waves · 2021</span></span>
-          <span class="track-length">4:58</span>
-          <button class="track-play" aria-label="Play preview of Copper and Rust">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </button>
-        </div>
-        <div class="track" data-track="4">
-          <span class="track-index"><span class="dot"></span>04</span>
-          <span class="track-title">Six in the Morning<span>Standing Waves · 2021</span></span>
-          <span class="track-length">7:03</span>
-          <button class="track-play" aria-label="Play preview of Six in the Morning">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </button>
-        </div>
-        <div class="track" data-track="5">
-          <span class="track-index"><span class="dot"></span>05</span>
-          <span class="track-title">Root Down<span>First Position · 2016</span></span>
-          <span class="track-length">5:20</span>
-          <button class="track-play" aria-label="Play preview of Root Down">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </button>
-        </div>
-      </div>
-
-      <p class="form-note" id="playerNote">Select a track to preview.</p>
-      <audio id="previewAudio" preload="none"></audio>
-    </div>
-  </section>
-
+    </section>
   <!-- =========================================================
        LIVE SESSIONS / VIDEO
        ========================================================= -->
-  <section id="sessions">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Live Sessions</span>
-        <h2 class="section-title">On the Bandstand</h2>
-        <p class="section-lede">A few filmed sets — replace these placeholders with your own embeds or hosted video.</p>
-      </div>
+       <section id="sessions">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Live Sessions</span>
+            <h2 class="section-title">On YouTube</h2>
+            <p class="section-lede"> My Videos — click a thumbnail to watch.</p>
+          </div>
+    
+          <div class="video-grid reveal">
+            <button class="video-card" data-youtube-id="vI3v-6I4El4" data-caption="Video 1 — edit this caption and title below.">
+              <img src="https://img.youtube.com/vi/vI3v-6I4El4/hqdefault.jpg" alt="Video thumbnail: Video 1" width="640" height="360">
+              <figcaption>
+                <span class="v-title">Video Title 1</span>
+                <span class="v-meta">YouTube · Watch Now</span>
+              </figcaption>
+            </button>
+    
+            <button class="video-card" data-youtube-id="zG_tXFVx-Gk" data-caption="Video 2 — edit this caption and title below.">
+              <img src="https://img.youtube.com/vi/zG_tXFVx-Gk/hqdefault.jpg" alt="Video thumbnail: Video 2" width="640" height="360">
+              <figcaption>
+                <span class="v-title">Video Title 2</span>
+                <span class="v-meta">YouTube · Watch Now</span>
+              </figcaption>
+            </button>
+    
+            <button class="video-card" data-youtube-id="Ht35CnxQRk4" data-caption="Video 3 — edit this caption and title below.">
+              <img src="https://img.youtube.com/vi/Ht35CnxQRk4/hqdefault.jpg" alt="Video thumbnail: Video 3" width="640" height="360">
+              <figcaption>
+                <span class="v-title">Video Title 3</span>
+                <span class="v-meta">YouTube · Watch Now</span>
+              </figcaption>
+            </button>
+    
+            <button class="video-card" data-youtube-id="hP52tv2U3Ww" data-caption="Video 4 — edit this caption and title below.">
+              <img src="https://img.youtube.com/vi/hP52tv2U3Ww/hqdefault.jpg" alt="Video thumbnail: Video 4" width="640" height="360">
+              <figcaption>
+                <span class="v-title">Video Title 4</span>
+                <span class="v-meta">YouTube · Watch Now</span>
+              </figcaption>
+            </button>
+    
+            <button class="video-card" data-youtube-id="JlLKGgXWzZo" data-caption="Video 5 — edit this caption and title below.">
+              <img src="https://img.youtube.com/vi/JlLKGgXWzZo/hqdefault.jpg" alt="Video thumbnail: Video 5" width="640" height="360">
+              <figcaption>
+                <span class="v-title">Video Title 5</span>
+                <span class="v-meta">YouTube · Watch Now</span>
+              </figcaption>
+            </button>
+          </div>
+        </div>
+    </section>
 
-      <div class="video-grid reveal">
-        <button class="video-card" data-video="Low Light — Live at The Foundry" data-caption="Full band set, recorded April 2024.">
-          <img src="assets/video-thumb-1.svg" alt="Video thumbnail: Low Light, live at The Foundry" width="640" height="360">
-          <figcaption>
-            <span class="v-title">Low Light — Live</span>
-            <span class="v-meta">The Foundry · 8:24</span>
-          </figcaption>
-        </button>
-        <button class="video-card" data-video="Solo Walking Bass Study" data-caption="An unaccompanied study on walking bass lines.">
-          <img src="assets/video-thumb-2.svg" alt="Video thumbnail: Solo Walking Bass Study" width="640" height="360">
-          <figcaption>
-            <span class="v-title">Solo Walking Bass Study</span>
-            <span class="v-meta">Studio Session · 4:10</span>
-          </figcaption>
-        </button>
-        <button class="video-card" data-video="Standing Waves Quartet — Album Trailer" data-caption="Behind the scenes from the Standing Waves sessions.">
-          <img src="assets/video-thumb-3.svg" alt="Video thumbnail: Standing Waves Quartet album trailer" width="640" height="360">
-          <figcaption>
-            <span class="v-title">Standing Waves — Trailer</span>
-            <span class="v-meta">Album Trailer · 1:32</span>
-          </figcaption>
-        </button>
+
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox-inner">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+        <img id="lightboxImg" src="" alt="">
+        <div class="lightbox-video-wrap" id="lightboxVideoWrap" style="display:none;">
+          <iframe
+            id="lightboxVideo"
+            src=""
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p class="lightbox-caption" id="lightboxCaption"></p>
       </div>
     </div>
-  </section>
 
   <!-- =========================================================
        TOUR DATES — styled like a set list
@@ -220,11 +245,11 @@ As the leader of the V.S.R. Quintet, Vishal presents original compositions shape
       <div class="section-head reveal">
         <span class="eyebrow">Tour</span>
         <h2 class="section-title">Upcoming Dates</h2>
-        <p class="section-lede">Edit this list directly in the HTML, or wire it up to a JSON feed — see the README.</p>
       </div>
 
       <div class="tour-list reveal">
-        <div class="tour-row">
+        <h5>To be announced soon ..</h5>
+        <!--<div class="tour-row">
           <span class="tour-date"><span class="month">Sep</span>12, 2026</span>
           <span class="tour-venue">The Deep End Room<span>Chicago, IL</span></span>
           <span class="tour-status limited">Few Left</span>
@@ -246,7 +271,7 @@ As the leader of the V.S.R. Quintet, Vishal presents original compositions shape
           <span class="tour-date"><span class="month">Oct</span>18, 2026</span>
           <span class="tour-venue">Standard Time Club<span>Los Angeles, CA</span></span>
           <span class="tour-status">On Sale</span>
-          <a href="#contact" class="btn btn-outline">Tickets</a>
+          <a href="#contact" class="btn btn-outline">Tickets</a>-->
         </div>
       </div>
     </div>
@@ -255,29 +280,81 @@ As the leader of the V.S.R. Quintet, Vishal presents original compositions shape
   <!-- =========================================================
        GALLERY
        ========================================================= -->
-  <section id="gallery">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Gallery</span>
-        <h2 class="section-title">Press &amp; Stage</h2>
-      </div>
+       <section id="gallery">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Gallery</span>
+            <h2 class="section-title">Press &amp; Stage</h2>
+          </div>
+    
+          <div class="gallery-wrap">
+            <div class="gallery-grid reveal is-collapsed" id="galleryGrid">
 
-      <div class="gallery-grid reveal">
-        <a href="assets/gallery-1.svg" data-lightbox="F-hole detail, studio session">
-          <img src="assets/gallery-1.svg" alt="Close-up illustration of a double bass f-hole" loading="lazy">
-        </a>
-        <a href="assets/gallery-2.svg" data-lightbox="Scroll and tuning pegs">
-          <img src="assets/gallery-2.svg" alt="Close-up illustration of tuning pegs and scroll" loading="lazy">
-        </a>
-        <a href="assets/gallery-3.svg" data-lightbox="On stage, house lights down">
-          <img src="assets/gallery-3.svg" alt="Illustration silhouette of a performer on a lit stage" loading="lazy">
-        </a>
-        <a href="assets/gallery-4.svg" data-lightbox="Fingerboard position markers">
-          <img src="assets/gallery-4.svg" alt="Close-up illustration of a fingerboard with position markers" loading="lazy">
-        </a>
-      </div>
-    </div>
-  </section>
+              <a href="assets/gallery/Erasmus Jazz Prijs 2026_De Schaapjesfabriek_HR-175.jpg" data-lightbox="F-hole detail, studio session">
+                <img src="assets/gallery/Erasmus Jazz Prijs 2026_De Schaapjesfabriek_HR-175.jpg" alt="Close-up illustration of a double bass f-hole" loading="lazy">
+              </a>
+              <a href="assets/gallery-4.svg" data-lightbox="Fingerboard position markers">
+                <img src="assets/gallery/Erasmus Jazz Prijs 2026_De Schaapjesfabriek_HR-170.jpg" alt="Close-up illustration of a fingerboard with position markers" loading="lazy">
+              </a>
+              <a href="assets/gallery-2.svg" data-lightbox="Scroll and tuning pegs">
+                <img src="assets/gallery/Erasmus Jazz Prijs 2026_De Schaapjesfabriek_HR-29.jpg" alt="Close-up illustration of tuning pegs and scroll" loading="lazy">
+              </a>
+              <a href="assets/gallery-3.svg" data-lightbox="On stage, house lights down">
+                <img src="assets/gallery/Erasmus Jazz Prijs 2026_De Schaapjesfabriek_HR-42.jpg" alt="Illustration silhouette of a performer on a lit stage" loading="lazy">
+              </a>
+              <a href="assets/gallery-4.svg" data-lightbox="Fingerboard position markers">
+                <img src="assets/gallery/Erasmus Jazz Prijs 2026_De Schaapjesfabriek_HR-43.jpg" alt="Close-up illustration of a fingerboard with position markers" loading="lazy">
+              </a>
+              <a href="assets/gallery-4.svg" data-lightbox="Fingerboard position markers">
+                <img src="assets/gallery/Erasmus Jazz Prijs 2026_De Schaapjesfabriek_HR-47.jpg" alt="Close-up illustration of a fingerboard with position markers" loading="lazy">
+              </a>
+              <a href="assets/gallery-4.svg" data-lightbox="Fingerboard position markers">
+                <img src="assets/gallery/Erasmus Jazz Prijs 2026_De Schaapjesfabriek_HR-49.jpg" alt="Close-up illustration of a fingerboard with position markers" loading="lazy">
+              </a> 
+              <a href="assets/gallery-4.svg" data-lightbox="Fingerboard position markers">
+                <img src="assets/gallery/Erasmus Jazz Prijs 2026_De Schaapjesfabriek_HR-60.jpg" alt="Close-up illustration of a fingerboard with position markers" loading="lazy">
+              </a>
+              <a href="assets/gallery-4.svg" data-lightbox="Fingerboard position markers">
+                <img src="assets/gallery/Erasmus Jazz Prijs 2026_De Schaapjesfabriek_HR-68.jpg" alt="Close-up illustration of a fingerboard with position markers" loading="lazy">
+              </a>
+              <a href="assets/gallery-4.svg" data-lightbox="Fingerboard position markers">
+                <img src="assets/gallery/Erasmus Jazz Prijs 2026_De Schaapjesfabriek_HR-69.jpg" alt="Close-up illustration of a fingerboard with position markers" loading="lazy">
+              </a>
+              <a href="assets/gallery-4.svg" data-lightbox="Fingerboard position markers">
+                <img src="assets/gallery/Erasmus Jazz Prijs 2026_De Schaapjesfabriek_HR-27.jpg" alt="Close-up illustration of a fingerboard with position markers" loading="lazy">
+              </a>
+              <a href="assets/gallery-4.svg" data-lightbox="Fingerboard position markers">
+                <img src="assets/gallery/DSC05200.JPG" alt="Close-up illustration of a fingerboard with position markers" loading="lazy">
+              </a>
+              <a href="assets/gallery-4.svg" data-lightbox="Fingerboard position markers">
+                <img src="assets/gallery/IMG_0654.JPG" alt="Close-up illustration of a fingerboard with position markers" loading="lazy">
+              </a>
+              <a href="assets/gallery-4.svg" data-lightbox="Fingerboard position markers">
+                <img src="assets/gallery/IMG_0657.JPG" alt="Close-up illustration of a fingerboard with position markers" loading="lazy">
+              </a>
+              <a href="assets/gallery-4.svg" data-lightbox="Fingerboard position markers">
+                <img src="assets/gallery/B04D54EB-5270-42A0-9EA7-1EF967925C85.JPG" alt="Close-up illustration of a fingerboard with position markers" loading="lazy">
+              </a>
+
+    
+              <!--
+                Add more photos by copying the block above — same pattern:
+                <a href="assets/YOUR-IMAGE.jpg" data-lightbox="Caption text">
+                  <img src="assets/YOUR-IMAGE.jpg" alt="Describe the photo" loading="lazy">
+                </a>
+                No other changes needed — the show/hide behavior below adapts
+                automatically to however many images are in this grid.
+              -->
+            </div>
+    
+            <div class="gallery-fade" id="galleryFade" aria-hidden="true"></div>
+    
+            <button class="btn btn-outline gallery-toggle" id="galleryToggle" type="button" aria-expanded="false" aria-controls="galleryGrid">
+              View Full Gallery
+            </button>
+          </div>
+        </div>
+    </section>
 
   <!-- =========================================================
        PRESS QUOTES
@@ -286,16 +363,8 @@ As the leader of the V.S.R. Quintet, Vishal presents original compositions shape
     <div class="container">
       <div class="press-track reveal">
         <div>
-          <p class="press-quote">Reeves doesn't just hold the bottom end together — he narrates it.</p>
-          <p class="press-source">Low End Times</p>
-        </div>
-        <div>
-          <p class="press-quote">A rare bassist you'd pay to watch alone on an empty stage.</p>
-          <p class="press-source">Nightset Review</p>
-        </div>
-        <div>
-          <p class="press-quote">Low Light is patient, warm, and confident enough to leave space.</p>
-          <p class="press-source">Downtown Jazz Journal</p>
+          <p class="press-quote">...played perhaps the most expressive jazz of the entire festival.</p>
+          <a class="press-source" target="_blank" href="https://jungle.world/artikel/2026/31/eine-rauchige-jazzkneipe-nur-groesser">Jungle World — North Sea Jazz Festival, Rotterdam, 2026</a>
         </div>
       </div>
     </div>
