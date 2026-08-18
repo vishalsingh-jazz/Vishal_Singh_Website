@@ -209,31 +209,58 @@ if (galleryGrid && galleryToggle) {
   var formNote = document.getElementById("formNote");
 
   if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      var name = form.querySelector("#fName");
-      var email = form.querySelector("#fEmail");
-      var message = form.querySelector("#fMessage");
-      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      var valid = true;
-      [name, email, message].forEach(function (field) {
-        if (!field.value.trim()) valid = false;
-      });
-      if (!emailPattern.test(email.value.trim())) valid = false;
-
-      if (!valid) {
-        formNote.textContent = "Please fill in your name, a valid email, and a message.";
+    
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+    
+        var name = form.querySelector("#fName");
+        var email = form.querySelector("#fEmail");
+        var message = form.querySelector("#fMessage");
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var submitBtn = form.querySelector('button[type="submit"]');
+    
+        var valid = true;
+        [name, email, message].forEach(function (field) {
+          if (!field.value.trim()) valid = false;
+        });
+        if (!emailPattern.test(email.value.trim())) valid = false;
+    
+        if (!valid) {
+          formNote.textContent = "Please fill in your name, a valid email, and a message.";
+          formNote.classList.remove("success");
+          return;
+        }
+    
+        submitBtn.disabled = true;
+        formNote.textContent = "Sending...";
         formNote.classList.remove("success");
-        return;
-      }
+    
+        fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { "Accept": "application/json" }
+        })
+          .then(function (response) {
+            submitBtn.disabled = false;
+            if (response.ok) {
+              formNote.textContent =
+                "Thanks, " + name.value.trim().split(" ")[0] +
+                " — your message has been sent. I'll get back to you as soon as possible.";
+              formNote.classList.add("success");
+              form.reset();
+            } else {
+              formNote.textContent =
+                "Something went wrong sending that — please email directly instead.";
+            }
+          })
+          .catch(function () {
+            submitBtn.disabled = false;
+            formNote.textContent =
+              "Something went wrong sending that — please email directly instead.";
+          });
+      });
+    }
 
-      // Demo behaviour: show a confirmation and reset the form.
-      // Swap this block for a real submission (fetch/Formspree/Netlify Forms/etc).
-      formNote.textContent = "Thanks, " + name.value.trim().split(" ")[0] + " — message received. Vishal's team will reply within a few days.";
-      formNote.classList.add("success");
-      form.reset();
-    });
   }
 })();
