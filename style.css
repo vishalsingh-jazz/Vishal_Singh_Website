@@ -19,9 +19,9 @@
   --line: rgba(20, 19, 15, 0.12);
   --line-on-dark: rgba(246, 244, 239, 0.14);
   --line-on-metal: rgba(20, 19, 15, 0.16);
-  --metal-3: #7e8c6a;
-  --metal-2: #7b8374;
-  --metal-1: #282826;
+  --metal-3: #8a71a2;
+  --metal-2: #708261;
+  --metal-1: #282027;
 
   /* --- Type tokens --- */
   --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
@@ -415,12 +415,12 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: clamp(2rem, 5vw, 4.5rem);
-  align-items: center;
+  align-items: start;
 }
 .about-portrait {
   position: relative;
   border: 1px solid var(--line);
-  margin-bottom: 320px;
+  padding: 14px;
 }
 .about-portrait img { width: 100%; }
 .about-portrait::after {
@@ -940,6 +940,12 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   .about-facts { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
   .hero { align-items: flex-end; padding-bottom: 3rem; }
   .hero-grid { max-width: 100%; padding-inline: 0; }
+}
+@media (min-width: 981px) {
+  .about-portrait {
+    position: sticky;
+    top: 6rem;
+  }
 }
 
 @media (max-width: 760px) {
