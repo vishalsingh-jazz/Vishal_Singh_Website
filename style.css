@@ -543,21 +543,18 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
    #sessions {
     background: var(--charcoal-2);   /* your token: #201F1A — one notch lighter than #14130F */
     color: var(--ivory);
-    border-top: 1px solid var(--line-on-dark);
+    border-top: 2.5px solid var(--line-on-dark);
   }
   #sessions .eyebrow { color: var(--gold-light); }
   #sessions .eyebrow::before { background: var(--gold-light); }
   #sessions .section-lede { color: var(--silver-light); }
-  
-   .video-grid {
+
+  .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 190px));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 170px));
     gap: 1.3rem 1rem;
-    justify-content: center;
-    max-width: 760px;
-    margin-inline: auto;
+    justify-content: start;
   }
-  
   .video-card {
     position: relative;
     border: 1px solid var(--line-on-dark);
