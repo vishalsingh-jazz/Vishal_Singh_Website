@@ -539,14 +539,15 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 /* =========================================================
    Video / Live sessions grid
    ========================================================= */
+
    #sessions {
-    position: relative;
-    background:
-      radial-gradient(ellipse 70% 50% at 50% 0%, rgba(198,161,91,0.16), transparent 60%),
-      linear-gradient(180deg, var(--metal-1), var(--metal-2) 70%, var(--metal-3));
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+    background: var(--charcoal-2);   /* your token: #201F1A — one notch lighter than #14130F */
+    color: var(--ivory);
+    border-top: 1px solid var(--line-on-dark);
   }
+  #sessions .eyebrow { color: var(--gold-light); }
+  #sessions .eyebrow::before { background: var(--gold-light); }
+  #sessions .section-lede { color: var(--silver-light); }
   
    .video-grid {
     display: grid;
@@ -559,20 +560,19 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   
   .video-card {
     position: relative;
-    border: 1px solid var(--line);
+    border: 1px solid var(--line-on-dark);
     border-radius: 6px;
     overflow: hidden;
-    background: var(--paper);
+    background: transparent;
     padding: 0;
     cursor: pointer;
     text-align: left;
     display: block;
-    box-shadow: 0 1px 2px rgba(20, 19, 15, 0.05);
-    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+    transition: transform 0.4s var(--ease), background 0.4s var(--ease), border-color 0.4s var(--ease);
   }
   .video-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 34px -18px rgba(20, 19, 15, 0.3);
+    background: rgba(198, 161, 91, 0.08);
     border-color: var(--gold);
   }
   
@@ -604,7 +604,7 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
     width: 34px; height: 34px;
     border-radius: 50%;
     border: 1px solid var(--gold);
-    background: rgba(20, 19, 15, 0.55);
+    background: rgba(20, 19, 15, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -624,14 +624,15 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
     font-size: 0.56rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--gold-deep);
+    color: var(--gold);            /* was: var(--gold-deep) */
     margin-bottom: 0.25rem;
   }
   .video-card .v-title {
     font-family: var(--font-display);
     font-size: 0.8rem;
     line-height: 1.25;
-    height: 2.5em;  
+    height: 2.5em;
+    color: var(--ivory);           /* new — was inheriting dark ink */
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -643,10 +644,9 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
     font-size: 0.54rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--ink-soft);
+    color: var(--silver-light);    /* was: var(--ink-soft) */
     margin-top: 0.25rem;
   }
-
 /* =========================================================
    Tour dates — styled like a set list
    ========================================================= */
@@ -926,6 +926,30 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   height: 100%;
   border: 0;
 }
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(20, 19, 15, 0.55);
+  border: 1px solid var(--line-on-dark);
+  color: var(--ivory);
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: border-color 0.3s var(--ease), color 0.3s var(--ease), background 0.3s var(--ease);
+}
+.lightbox-nav:hover { border-color: var(--gold); color: var(--gold-light); background: rgba(20, 19, 15, 0.8); }
+.lightbox-prev { left: 0.75rem; }
+.lightbox-next { right: 0.75rem; }
+
+/* Hidden entirely in video mode — Prev/Next only make sense browsing photos */
+.lightbox.is-video .lightbox-nav { display: none; }
 /* =========================================================
    Responsive
    ========================================================= */
