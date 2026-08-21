@@ -972,6 +972,11 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem 0.75rem;
   }
+  .hero-scroll-cue { display: none; }
+  .hero-title {
+    font-size: clamp(1.4rem, 6vw, 1.8rem);   /* was: clamp(2rem, 10vw, 2.6rem) */
+    margin-block: 0.5rem 0.85rem;
+  }
 }
 @media (min-width: 981px) {
   .about-portrait {
@@ -1026,7 +1031,7 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
       border-radius: 3px;
     }
     .hero-title {
-      font-size: clamp(1.6rem, 8vw, 2.1rem);   /* was: clamp(2rem, 10vw, 2.6rem) */
+      font-size: clamp(1.4rem, 6vw, 1.8rem);   /* was: clamp(2rem, 10vw, 2.6rem) */
       margin-block: 0.5rem 0.85rem;
     }
     .hero-sub {
@@ -1045,7 +1050,7 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
       width: 100%;
     }
     .hero-meta { display: none; }   /* only shows if you re-add stat numbers later */
-    .hero-scroll-cue { bottom: 1.25rem; }
     .hero-copy .eyebrow { font-size: 0.64rem; }
+    .hero-scroll-cue { display: none; }
   
 }
