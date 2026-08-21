@@ -309,8 +309,8 @@ h2.section-title {
   .hero-scroll-cue { color: var(--silver-light); }
 
 .hero-title {
-  font-size: clamp(2.6rem, 6vw, 5rem);
-  line-height: 1.02;
+  font-size: clamp(2rem, 5vw, 4rem);   /* was: clamp(2.6rem, 6vw, 5rem) */
+  line-height: 1.05;
   margin-block: 0.6rem 1.1rem;
 }
 .hero-title .line { display: block; }
@@ -319,10 +319,9 @@ h2.section-title {
 .hero-sub {
   max-width: 46ch;
   color: var(--silver-light);
-  font-size: 1.08rem;
+  font-size: 0.98rem;      /* was: 1.08rem */
   margin-bottom: 2.1rem;
 }
-
 .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.6rem; }
 
 .hero-meta {
@@ -1027,11 +1026,11 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
       border-radius: 3px;
     }
     .hero-title {
-      font-size: clamp(2rem, 10vw, 2.6rem);
+      font-size: clamp(1.6rem, 8vw, 2.1rem);   /* was: clamp(2rem, 10vw, 2.6rem) */
       margin-block: 0.5rem 0.85rem;
     }
     .hero-sub {
-      font-size: 0.92rem;
+      font-size: 0.86rem;      /* was: 0.92rem */
       margin-bottom: 1.5rem;
       max-width: none;
     }
@@ -1047,5 +1046,6 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
     }
     .hero-meta { display: none; }   /* only shows if you re-add stat numbers later */
     .hero-scroll-cue { bottom: 1.25rem; }
+    .hero-copy .eyebrow { font-size: 0.64rem; }
   
 }
