@@ -679,6 +679,13 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 /* =========================================================
    Gallery
    ========================================================= */
+
+#gallery {
+    background: var(--paper);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);F
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -1033,6 +1040,12 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
     content: "";
     width: 22px; height: 1px;
     background: var(--gold);
+  }
+
+  #scoring {
+    background: var(--paper);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
   }
 
   .film-grid {
