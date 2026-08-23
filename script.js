@@ -114,6 +114,30 @@
     });
   });
 
+  /* ---------- Pre-select contact reason from CTA buttons ---------- */
+document.querySelectorAll("[data-reason]").forEach(function (link) {
+  link.addEventListener("click", function () {
+    var reasonSelect = document.getElementById("fReason");
+    if (!reasonSelect) return;
+
+    var value = link.dataset.reason;
+    var matched = Array.prototype.some.call(reasonSelect.options, function (opt) {
+      if (opt.text === value) {
+        reasonSelect.value = value;
+        return true;
+      }
+      return false;
+    });
+
+    if (matched) {
+      // brief highlight so it's visible the field was pre-filled, not just defaulted
+      reasonSelect.classList.add("field-highlight");
+      setTimeout(function () { reasonSelect.classList.remove("field-highlight"); }, 1600);
+    }
+  });
+});
+
+
   /* ---------- Lightbox: video cards + gallery images ---------- */
   var lightbox = document.getElementById("lightbox");
   var lightboxImg = document.getElementById("lightboxImg");
@@ -143,7 +167,6 @@ var lightboxVideo = document.getElementById("lightboxVideo");
     lightboxImg.style.display = "block";
   }
 
-  //so the two "Watch" buttons open the same lightbox video player your Sessions section already uses
 
   document.querySelectorAll(".film-watch").forEach(function (btn) {
     btn.addEventListener("click", function () {
