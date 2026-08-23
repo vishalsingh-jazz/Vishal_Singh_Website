@@ -946,6 +946,151 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 
 /* Hidden entirely in video mode — Prev/Next only make sense browsing photos */
 .lightbox.is-video .lightbox-nav { display: none; }
+
+/* =========================================================
+   V.S.R. Quintet
+   ========================================================= */
+   .quintet-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
+  }
+  .quintet-copy p { margin-bottom: 1.1rem; color: var(--ink-soft); }
+  .quintet-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+  
+  .quintet-subhead {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 1rem;
+  }
+  
+  .quintet-highlights {
+    border: 1px solid var(--line);
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .highlight-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    font-family: var(--font-display);
+    font-size: 1.02rem;
+    padding-block: 0.65rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .highlight-list li:last-child { border-bottom: none; }
+  .highlight-list .dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    margin-top: 0.5em;
+  }
+  
+  .quintet-album { border: 1px solid var(--line); padding: 1.75rem; }
+  .quintet-album p { color: var(--ink-soft); margin-bottom: 1rem; }
+  .quintet-status {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    border: 1px solid var(--gold);
+    padding: 0.35rem 0.7rem;
+  }
+  
+  .gallery-subhead {
+    grid-column: 1 / -1;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    margin: 0 0 0.25rem;
+  }
+  .gallery-subhead::before {
+    content: "";
+    width: 22px; height: 1px;
+    background: var(--gold);
+  }
+
+  .film-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  .film-card { border: 1px solid var(--line); overflow: hidden; }
+  
+  
+  .film-copy { padding: 1.25rem 1.5rem 1.5rem; }
+  .film-title { display: block; font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 0.3rem; }
+  .film-meta {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+  }
+  .film-enquiry {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  
+  .film-thumb {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    background: none;
+  }
+  .film-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s var(--ease); }
+  .film-thumb:hover img { transform: scale(1.05); }
+  
+  .film-thumb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(20, 19, 15, 0.55), transparent 50%);
+  }
+  .film-thumb .play-icon {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    background: rgba(20, 19, 15, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.35s var(--ease), background 0.35s var(--ease);
+  }
+  .film-thumb .play-icon svg { width: 14px; height: 14px; fill: var(--gold-light); }
+  .film-thumb:hover .play-icon { transform: translate(-50%, -50%) scale(1.1); background: var(--gold); }
+  .film-thumb:hover .play-icon svg { fill: var(--ink); }
+ 
 /* =========================================================
    Responsive
    ========================================================= */
@@ -977,6 +1122,8 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
     font-size: clamp(1.4rem, 6vw, 1.8rem);   /* was: clamp(2rem, 10vw, 2.6rem) */
     margin-block: 0.5rem 0.85rem;
   }
+  .quintet-grid { grid-template-columns: 1fr; }
+  
 }
 @media (min-width: 981px) {
   .about-portrait {
@@ -1052,5 +1199,6 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
     .hero-meta { display: none; }   /* only shows if you re-add stat numbers later */
     .hero-copy .eyebrow { font-size: 0.64rem; }
     .hero-scroll-cue { display: none; }
+    .film-grid { grid-template-columns: 1fr; }
   
 }

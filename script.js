@@ -143,6 +143,16 @@ var lightboxVideo = document.getElementById("lightboxVideo");
     lightboxImg.style.display = "block";
   }
 
+  //so the two "Watch" buttons open the same lightbox video player your Sessions section already uses
+
+  document.querySelectorAll(".film-watch").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var youtubeId = btn.dataset.youtubeId;
+      var caption = btn.dataset.caption || "";
+      if (youtubeId) openVideoLightbox(youtubeId, caption);
+    });
+  });
+
   document.querySelectorAll(".video-card").forEach(function (card) {
     card.addEventListener("click", function () {
       var youtubeId = card.dataset.youtubeId;
