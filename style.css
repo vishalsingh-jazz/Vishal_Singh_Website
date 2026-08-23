@@ -950,6 +950,11 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 /* =========================================================
    V.S.R. Quintet
    ========================================================= */
+   #quintet {
+    background: var(--paper);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
    .quintet-grid {
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
@@ -967,6 +972,13 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
     text-transform: uppercase;
     color: var(--gold-deep);
     margin-bottom: 1rem;
+  }
+  .quintet-side {
+    margin-top: 5.5rem;   /* roughly the height of the eyebrow + heading block above it */
+  }
+  .quintet-copy .section-title {
+    margin-top: 0.4rem;
+    margin-bottom: 1.25rem;
   }
   
   .quintet-highlights {
@@ -992,7 +1004,7 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
     margin-top: 0.5em;
   }
   
-  .quintet-album { border: 1px solid var(--line); padding: 1.75rem; }
+  .quintet-album { border: 1px solid var(--line); padding: 1.75rem; margin-top: 5.5rem; }
   .quintet-album p { color: var(--ink-soft); margin-bottom: 1rem; }
   .quintet-status {
     display: inline-block;
@@ -1025,26 +1037,103 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 
   .film-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(220px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 170px));
+    gap: 1.3rem 1rem;
+    justify-content: start;
     margin-top: 1rem;
   }
-  .film-card { border: 1px solid var(--line); overflow: hidden; }
   
+  .film-card {
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--paper);
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+    display: block;
+    box-shadow: 0 1px 2px rgba(20, 19, 15, 0.05);
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+  }
+  .film-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 34px -18px rgba(20, 19, 15, 0.3);
+    border-color: var(--gold);
+  }
   
-  .film-copy { padding: 1.25rem 1.5rem 1.5rem; }
-  .film-title { display: block; font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 0.3rem; }
-  .film-meta {
+  .film-card .thumb {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+  }
+  .film-card .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s var(--ease);
+  }
+  .film-card:hover .thumb img { transform: scale(1.07); }
+  
+  .film-card .thumb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(20, 19, 15, 0.6), transparent 55%);
+  }
+  
+  .film-card .play-icon {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    background: rgba(20, 19, 15, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.35s var(--ease), background 0.35s var(--ease);
+  }
+  .film-card .play-icon svg { width: 11px; height: 11px; fill: var(--gold-light); }
+  .film-card:hover .play-icon {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: var(--gold);
+  }
+  .film-card:hover .play-icon svg { fill: var(--ink); }
+  
+  .film-card figcaption { padding: 0.6rem 0.6rem 0.75rem; }
+  .film-card .v-index {
     display: block;
     font-family: var(--font-mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
+    font-size: 0.56rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 0.25rem;
+  }
+  .film-card .v-title {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    line-height: 1.25;
+    height: 2.5em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .film-card .v-meta {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.54rem;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--ink-soft);
-    margin-bottom: 1rem;
+    margin-top: 0.25rem;
   }
   .film-enquiry {
-    margin-top: 2.5rem;
+    margin-top: 2.5rem;   /* was already there as-is, but check it's actually present */
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -1054,45 +1143,8 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
     color: var(--ink-soft);
   }
   
-  .film-thumb {
-    position: relative;
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    padding: 0;
-    border: none;
-    cursor: pointer;
-    background: none;
-  }
-  .film-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s var(--ease); }
-  .film-thumb:hover img { transform: scale(1.05); }
-  
-  .film-thumb::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(20, 19, 15, 0.55), transparent 50%);
-  }
-  .film-thumb .play-icon {
-    position: absolute;
-    left: 50%; top: 50%;
-    transform: translate(-50%, -50%);
-    width: 46px; height: 46px;
-    border-radius: 50%;
-    border: 1px solid var(--gold);
-    background: rgba(20, 19, 15, 0.55);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.35s var(--ease), background 0.35s var(--ease);
-  }
-  .film-thumb .play-icon svg { width: 14px; height: 14px; fill: var(--gold-light); }
-  .film-thumb:hover .play-icon { transform: translate(-50%, -50%) scale(1.1); background: var(--gold); }
-  .film-thumb:hover .play-icon svg { fill: var(--ink); }
-
-  .field-highlight {
-    animation: field-pulse 1.6s var(--ease);
+  @media (max-width: 760px) {
+    .film-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem 0.75rem; }
   }
   @keyframes field-pulse {
     0% { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(198, 161, 91, 0.35); }

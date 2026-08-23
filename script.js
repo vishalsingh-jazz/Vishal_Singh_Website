@@ -168,10 +168,10 @@ var lightboxVideo = document.getElementById("lightboxVideo");
   }
 
 
-  document.querySelectorAll(".film-watch").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      var youtubeId = btn.dataset.youtubeId;
-      var caption = btn.dataset.caption || "";
+  document.querySelectorAll(".film-card").forEach(function (card) {
+    card.addEventListener("click", function () {
+      var youtubeId = card.dataset.youtubeId;
+      var caption = card.dataset.caption || "";
       if (youtubeId) openVideoLightbox(youtubeId, caption);
     });
   });
