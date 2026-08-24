@@ -691,7 +691,7 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 #gallery {
     background: var(--paper);
     border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);F
+    border-bottom: 1px solid var(--line);
 }
 
 .gallery-grid {
