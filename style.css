@@ -215,6 +215,14 @@ h2.section-title {
   font-size: 1.05rem;
   letter-spacing: 0.02em;
 }
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-book-mobile { display: none; }   /* hidden by default (desktop) */
+
 .brand img { width: 75px; height: 84px; }
 .brand .brand-sub {
   display: block;
@@ -1299,5 +1307,14 @@ section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 }
 
 @media (max-width: 1100px) {
- 
+  .nav-book-mobile {
+    display: inline-flex;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.68rem;
+  }
+  .nav-cta { display: none; }   /* hide the in-dropdown Book link on mobile — it's now in the corner */
+
+  .nav-links {
+    padding-left: calc(var(--gutter) + 1.5rem);   /* shifts dropdown items right */
+  }
 }
